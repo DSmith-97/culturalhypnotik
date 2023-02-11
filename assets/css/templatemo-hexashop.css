@@ -722,10 +722,10 @@ banner
 
 .main-banner .right-content .right-first-image .thumb .hover-content {
   position: absolute;
-  top: 15px;
+  top: 300px;
   right: 15px;
   left: 15px;
-  bottom: 15px;
+  bottom: 130px;
   text-align: center;
   background-color: rgba(42,42,42,.97);
   opacity: 0;
@@ -759,6 +759,24 @@ banner
   margin-bottom: 20px;
 }
 
+.lower-description {
+    margin-top: 10px;
+}
+
+.quick-add {
+    width: 50%; 
+    color:lightgrey; 
+    background-color: black; 
+    border-radius: 100px; 
+    border: 2px solid black; 
+    padding: 10px
+}
+
+/*
+.img-thumbnail {
+    width: 170px;
+}
+*/
 
 
 /*
@@ -1904,6 +1922,45 @@ Single Product Page
  .quantity.buttons_added .plus:focus {
   outline: none; }
 
+.size-label {
+    font: 600 13px/16px proxima-nova,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: .25px;
+    align-items: center;
+    background: #fff;
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    text-align: center;
+    transition: .2s ease;
+}
+
+.size-buttons {
+    height: 40px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: 2;
+}
+
+.size-input {
+    clip: rect(1px,1px,1px,1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute!important;
+    white-space: nowrap;
+    width: 1px;
+}
+
 
 
 /* 
@@ -2293,6 +2350,10 @@ responsive
   footer h4 {
     margin-top: 30px;
   }
+    
+   .small-views {
+      display: none;
+   }
 }
 
 
