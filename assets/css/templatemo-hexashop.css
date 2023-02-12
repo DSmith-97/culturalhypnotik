@@ -145,6 +145,71 @@ body {
   }
 }
 
+@media (max-width: 320px) {
+  .logo img{
+    width: 180px
+  }
+}
+
+
+/*
+
+@media (min-width: 1440px) {
+  #topCart{
+    height: 35px;
+    width: 300px;
+    margin-left: 800px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #topCart{
+    height: 35px;
+    width: 300px;
+    margin-left: 650px;
+  }
+}
+
+@media (min-width: 768px) {
+  #topCart{
+    height: 35px;
+    width: 300px;
+    margin-left: 490px;
+  }
+}
+
+@media (min-width: 425px) {
+  #topCart{
+    border: 2px solid orange;
+    /margin-top: 80px;
+    height: 35px;
+    width: 450px;
+  }
+}
+
+@media (max-width: 320px) {
+   #topCart{
+    height: 35px;
+    width: 300px;
+    margin-top: 80px;
+    padding-bottom: 10px;   
+  }
+}
+*/
+
+@media (max-width: 426px) {
+   #shoppingcart{
+    margin-left: 100px;  
+  }
+}
+
+@media (max-width: 320px) {
+   #shoppingcart{
+    margin-left: 60px;  
+  }
+}
+
+
 .main-border-button a {
   font-size: 13px;
   color: #fff;

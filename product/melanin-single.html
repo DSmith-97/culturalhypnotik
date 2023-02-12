@@ -48,6 +48,11 @@
                         <a href="../index.html" class="logo">
                             <img src="../assets/images/ch7_logo.png" width="175px">
                         </a>
+                        <!-- ***** Shopping Cart ***** -->
+                        <div id="topCart" style="background-color: lightgray; border-top: 1px solid black;">
+                            <label for="cartNum">Shopping Cart</label>
+                            <input disabled type="text" class="cartNum" style="width: 24px;height: 26px; margin-top: 6px;" placeholder="0" /> Item(s)
+                        </div>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
@@ -89,17 +94,28 @@
     <!-- ***** Product Area Starts ***** -->
     <section class="section" id="product" style="margin-top: 100px;">
         <div class="container">
+            <div class="right-content d-lg-none d-block" style="margin-top: 155px">
+                <h4>Melanin Unisex Tee</h4>
+                <span class="price">$14.00</span>
+            </div>
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-2 d-md-none d-sm-none d-lg-block">
                     <div><img class="img-thumbnail small-views" src="../assets/images/wht_melanin_tee(f).png" alt=""></div> <br />
                     <div><img class="img-thumbnail small-views" src="../assets/images/wht_melanin_tee(m).png" alt=""></div>
                 </div>
-
                 <div class="col-lg-7">
-                <div class="left-images">
-                    <img id="main-image" src="../assets/images/wht_melanin_tee(f).png" alt="">
+                    <div class="left-images">
+                        <img id="main-image" src="../assets/images/wht_melanin_tee(f).png" alt="">
+                    </div>
+                    <div class="row d-block d-lg-none">
+                        <div class="col-sm-2">
+                            &nbsp;
+                        </div>
+                        <div class="left-images">
+                            <img id="secondary-image" src="../assets/images/wht_melanin_tee(m).png" alt="">
+                        </div>
+                    </div>
                 </div>
-            </div>
             <div class="col-lg-3">
                 <div class="right-content">
                     <h4>Melanin Unisex Tee</h4>
@@ -215,7 +231,6 @@
                         <div class="main-border-button"><a href="#">Add To Cart</a></div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </section>
