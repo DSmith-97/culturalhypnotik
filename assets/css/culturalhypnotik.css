@@ -952,7 +952,7 @@ Latest
 }
 
 #latest .owl-dots {
-  display: none;
+  display: inline-block;
 }
     
 #latest .owl-nav .owl-prev{
@@ -1016,6 +1016,20 @@ Latest
   background-color: transparent;
   line-height: 48px;
   border :1px solid #2a2a2a;
+}
+
+.hoodiechevron-left {
+    font-size: 36px;
+    margin-top: 141px;
+    position: absolute;
+    margin-right: -2px;
+}
+
+.hoodiechevron-right {
+    font-size: 36px;
+    margin-top: -170px;
+    position: absolute;
+    margin-left: 280px;
 }
 
 
@@ -1113,7 +1127,7 @@ Popular
 }
 
 #popular .owl-dots {
-  display: none;
+  display: inline-block;
 }
     
 #popular .owl-nav .owl-prev{
@@ -1273,7 +1287,7 @@ Kids
 }
 
 #kids .owl-dots {
-  display: none;
+  display: inline-block;
 }
     
 #kids .owl-nav .owl-prev{
