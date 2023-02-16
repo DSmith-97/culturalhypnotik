@@ -1058,6 +1058,22 @@ Latest
     position: absolute;
     margin-left: 310px;
     }
+    
+    .left-chevy {
+        color: grey;
+        margin-top: 140px;
+        position: absolute;
+        margin-left: -11px;
+        font-size: x-large;
+    }
+    
+    .right-chevy {
+        color: grey;
+        margin-top: 140px;
+        position: absolute;
+        margin-left: 320px;
+        font-size: x-large;
+    }
 
     
 /*
