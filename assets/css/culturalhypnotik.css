@@ -1018,19 +1018,60 @@ Latest
   border :1px solid #2a2a2a;
 }
 
-.hoodiechevron-left {
-    font-size: 36px;
-    margin-top: 141px;
-    position: absolute;
-    margin-right: -2px;
+
+@media (max-width: 768px) {
+.hoodiechevron-right {
+      display: none;
+    }
+    
+  .hoodiechevron-left {
+      display: none;
+    }
+    
+    
 }
 
+/*
+.hoodiechevron-rt {
+    color: blue;
+    font-size: 37px;
+    margin-top: -203px;
+    position: absolute;
+    margin-left: 300px;
+    }
+*/
+
+@media (max-width: 425px) {
+  .hoodiechevron-left {
+      display: block;
+      color: yellow;
+      font-size: 36px;
+      margin-top: 141px;
+      position: absolute;
+      margin-right: -2px;
+    }
+    
+    .hoodiechevron-rt {
+    color: blue;
+    font-size: 37px;
+    margin-top: -203px;
+    position: absolute;
+    margin-left: 300px;
+    }
+
+    
+/*
 .hoodiechevron-right {
-    font-size: 36px;
+    color: blue;
+    font-size: 37px;
     margin-top: -208px;
     position: absolute;
     margin-left: 313px;
+    }
+*/
 }
+
+
 
 
 /*
