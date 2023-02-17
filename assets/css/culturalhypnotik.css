@@ -871,11 +871,11 @@ Latest
 }
 
 #latest .section-heading {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 #latest .item .down-content {
-  padding-top: 30px;
+  padding-top: 0px;
   position: relative;
   z-index: 3;
   background-color: #fff;
@@ -1040,6 +1040,16 @@ Latest
     margin-left: 300px;
     }
 */
+
+@media (min-width: 768px) {
+    .left-chevy {
+        display: none;
+    }
+    .right-chevy {
+        display: none;
+    }
+}
+
 
 @media (max-width: 425px) {
   .hoodiechevron-left {
