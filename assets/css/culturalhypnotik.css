@@ -755,6 +755,123 @@ banner
   margin-bottom: 20px;
 }
 
+@media (max-width: 768px) {
+  .main-banner .left-content .inner-content h4 {
+      color: #fff;
+      margin-top: -227px;
+      font-size: 39px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 425px) {
+ .main-banner .left-content .inner-content h4 {
+      color: #fff;
+      margin-top: -202px;
+      font-size: 39px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    
+    #lead-sale{
+        font-weight: bolder;
+        position: absolute;
+        margin-top: -257px;
+        border: 3px solid white;
+        width: 84%;
+        margin-left: 4%;
+        border-radius: 4px;
+        height: 510px;
+    }
+    
+    #main-sale-button{
+    background-color: lightgrey;
+    border: 1px solid lightgrey;
+    border-color: white;
+    opacity: 85%;
+    padding: 12px;
+    border-radius: 0px;
+    position: absolute;
+    margin-top: 296px;
+    margin-left: 140px;
+    color: white;
+    }
+    
+    #lead-sale .sale-text {
+      animation: blinker 1s linear infinite;
+        color: white;
+        font-weight: bold;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 50%;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+  .main-banner .left-content .inner-content h4 {
+      color: #fff;
+      margin-top: -171px;
+      font-size: 31px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    #lead-sale{
+        font-weight: bolder;
+        position: absolute;
+        margin-top: -225px;
+        border: 3px solid white;
+        width: 84%;
+        margin-left: 4%;
+        border-radius: 4px;
+        height: 445px;
+    }
+    
+    #lead-sale .sale-text {
+      animation: blinker 1s linear infinite;
+        color: white;
+        font-weight: bold;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 50%;
+        }
+    }
+    
+    
+#main-sale-button{
+    background-color: lightgrey;
+    border: 1px solid lightgrey;
+    border-color: white;
+    opacity: 85%;
+    padding: 12px;
+    border-radius: 0px;
+    position: absolute;
+    margin-top: 274px;
+    margin-left: 120px;
+    color: white;
+    }
+}
+
+
+@media (max-width: 320px) {
+  .main-banner .left-content .inner-content h4 {
+      color: #fff;
+      margin-top: -175px;
+      font-size: 31px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+}
+
+
 .main-banner .left-content .inner-content span {
   font-size: 16px;
   color: #fff;
@@ -2006,6 +2123,11 @@ Single Product Page
   color: #aaa;
   position: relative;
   z-index: 11;
+}
+
+
+#main-sale-button a{
+    color: black;
 }
 
 .total h4 {
