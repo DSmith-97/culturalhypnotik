@@ -65,7 +65,7 @@
                         <!-- ***** Menu End ***** -->
                     </nav>
                 </div>
-                <div id="shoppingcart" class="d-block d-md-none d-xs-none" style="background-color: lightgray; opacity: 50%">
+                <div id="shoppingcart" class="d-block d-md-none d-xs-none yourShoppingCart" style="background-color: lightgray; opacity: 50%">
                     <label for="cartNum">Shopping Cart</label>
                     <input disabled="" type="text" class="cartNum" style="width: 24px;height: 26px; margin-top: 6px;" placeholder="0"> Item(s)
                 </div>
@@ -131,15 +131,6 @@
                 <div class="right-content">
                     <h4>CHOC-Lit Unisex Tee</h4>
                     <span class="price">$18.00</span>
-<!--
-                    <ul class="stars">
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                    </ul>
--->
                     <span>
                         Description: Soft, Comfy, Cotton Unisex T-shirt
                         
@@ -152,60 +143,12 @@
                             overproduction, so thank you for making thoughtful purchasing 
                             decisions!</p>
                     </span>
-                    
-                    <div class="quantity-content">
-                        
+                     <div class="quantity-content">
                         <div class="left-content">
                             <h6>Size:</h6>
                         </div>
                         <div class="right-content">
-                            
-                                
-                            <label class="size-buttons">
-                                <input type="radio" name="id" value="S" class="size-input">
-                                <span class="size-label">S
-                                </span>
-                            </label>
-
-<!--
-
-                              <label class="product-info__size-button">
-                                <input type="radio" name="id" value="12190243586172" class="product-info__size-button-input">
-                                <span class="product-info__size-button-label">M
-                                </span>
-                              </label>
-
-
-                              <label class="product-info__size-button">
-                                <input type="radio" name="id" value="12190243618940" class="product-info__size-button-input">
-                                <span class="product-info__size-button-label">L
-                                </span>
-                              </label>
-
-
-                              <label class="product-info__size-button">
-                                <input type="radio" name="id" value="12202936893564" class="product-info__size-button-input">
-                                <span class="product-info__size-button-label">1X
-                                </span>
-                              </label>
-
-
-                              <label class="product-info__size-button">
-                                <input type="radio" name="id" value="12202937221244" class="product-info__size-button-input">
-                                <span class="product-info__size-button-label">2X
-                                </span>
-                              </label>
-
-
-                              <label class="product-info__size-button">
-                                <input type="radio" name="id" value="12202937581692" class="product-info__size-button-input">
-                                <span class="product-info__size-button-label">3X
-                                </span>
-                              </label>
--->
-
-                            </div>
-                            <div>    
+                            <div>
                                 <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1); background-color: red" disabled>
                                 <label id="item2" for="item2">X</label>&nbsp;&nbsp;
                                 
@@ -225,21 +168,10 @@
                                 <label id="item2" for="item2">XXL</label>
                             </div>
                         </div>
-                        
-                        <br />
-                        
-                        <div class="left-content">
-                            <h6>No. of Orders</h6>
+                        <div class="total">
+                            <h4>Total: $</h4><h4 class="singlePrice"> </h4>
+                            <div class="main-border-button addToCart"><a href="#">Add To Cart</a></div>
                         </div>
-                        <div class="right-content">
-                            <div class="quantity buttons_added">
-                                <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="total">
-                        <h4>Total: $</h4><h4 id="singlePrice"> </h4><h4></h4>
-                        <div class="main-border-button"><a href="#">Add To Cart</a></div>
                     </div>
                 </div>
             </div>
@@ -346,10 +278,10 @@
         });
         
         (function calculateTotal(){
-            $(".total #singlePrice")[0].innerText = 18;
+            $(".total .singlePrice")[0].innerText = 18;
             $("input[name='quantity']").on('change', function(){ 
 
-                    $(".total #singlePrice")[0].innerText = (18.00 * $("input[name='quantity']").val());
+                    $(".total .singlePrice")[0].innerText = (18.00 * $("input[name='quantity']").val());
             });
         })();
         

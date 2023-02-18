@@ -111,30 +111,35 @@
                             decisions!</p>
                     </span>
                     <div class="quantity-content">
-
                         <div class="left-content">
                             <h6>Size:</h6>
                         </div>
-                        <div>    
-                            <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1); background-color: red" disabled>
-                            <label id="item2" for="item2">X</label>&nbsp;&nbsp;
-
-                            <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)" disabled>
-                            <label id="item2" for="item2">S</label>&nbsp;&nbsp;
-
-                            <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
-                            <label id="item2" for="item2">M</label>&nbsp;&nbsp;
-
-                            <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
-                            <label id="item2" for="item2">L</label>&nbsp;&nbsp;
-
-                            <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
-                            <label id="item2" for="item2">XL</label>&nbsp;&nbsp;
-
-                            <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
-                            <label id="item2" for="item2">XXL</label>
+                        <div class="right-content">
+                            <div>
+                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1); background-color: red" disabled>
+                                <label id="item2" for="item2">X</label>&nbsp;&nbsp;
+                                
+                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)" disabled>
+                                <label id="item2" for="item2">S</label>&nbsp;&nbsp;
+                                
+                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
+                                <label id="item2" for="item2">M</label>&nbsp;&nbsp;
+                                
+                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
+                                <label id="item2" for="item2">L</label>&nbsp;&nbsp;
+                                
+                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
+                                <label id="item2" for="item2">XL</label>&nbsp;&nbsp;
+                                
+                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
+                                <label id="item2" for="item2">XXL</label>
+                            </div>
                         </div>
-                    </div>
+                        <div class="total">
+                            <h4>Total: $</h4><h4 class="singlePrice"> </h4>
+                            <div class="main-border-button addToCart"><a href="#">Add To Cart</a></div>
+                        </div>
+<!--
                     <div class="left-content" style="align-content: center">
                         <h6>No. of Orders</h6>
                     </div>
@@ -144,9 +149,10 @@
                         </div>
                         <div class="total pull-right">
                             <h4>Total: $</h4><h4 class="singlePrice"> </h4><h4></h4>
-                            <div class="main-border-button"><a href="#">Add To Cart</a></div>
+                            <div class="main-border-button addToCart"><a href="#">Add To Cart</a></div>
                         </div>
                     </div>
+-->
                 </div>
                 
             </div>
@@ -251,11 +257,12 @@
             });
         });
         
+        // Calculate shopping cart total items
         (function calculateTotal(){
             $(".total .singlePrice")[0].innerText = 38;
             $("input[name='quantity']").on('change', function(){ 
 
-                    $(".total .singlePrice")[0].innerText = (38.00 * $("input[name='quantity']").val());
+                $(".total .singlePrice")[0].innerText = (38.00 * $("input[name='quantity']").val());
             });
         })();
         

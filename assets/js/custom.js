@@ -253,6 +253,61 @@
         updateProduct("001", "color", "white");
     });
     
+    <!--- store shopping card info  ---->
+    (function calcuateCartCount() {
+
+        localStorage.getItem("shoppingCartCount") ? localStorage.getItem("shoppingCartCount") : localStorage.setItem("shoppingCartCount", 0);
+        var cartCount = parseInt(localStorage.getItem("shoppingCartCount"));
+
+        $(".addToCart").click(function(){
+            cartCount+=1;
+            localStorage.setItem("shoppingCartCount", cartCount);
+            $(".cartNum").val('');
+            $(".cartNum").val(localStorage.getItem("shoppingCartCount"));
+        })
+         $(".cartNum").val(localStorage.getItem("shoppingCartCount"));
+        
+        
+        <!---  Shopping Cart Modal  --->
+        var aModal = '$("body").append('+
+            '<div class="modal fade" id="cartModal" role="dialog">'+
+              '<div class="modal-dialog">'+
+
+                '<!-- Modal content-->'+
+                  '<div class="modal-content">'+
+                    '<div class="modal-header">'+
+                      '<button type="button" class="close" data-dismiss="modal">&times;</button>'+
+                      '<h4 class="modal-title">Shopping Cart</h4>'+
+                    '</div>'+
+                    '<div class="modal-body">'+
+                      '<p>Your Items:</p>'+
+                        '<div>'+
+                            '<ul>'+
+                                '<ul>Item 1</ul>'+
+                                '<ul>Item 2</ul>'+
+                                '<ul>Item 2</ul>'+
+                            '</ul>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="modal-footer">'+
+                      '<button type="button" class="btn btn-primary" data-dismiss="modal">Proceed to Checkout!</button>'+
+                      '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>'+
+                    '</div>'+
+                  '</div>'+
+               '</div>'+
+          '</div>")';
+                
+
+        $("body").append(aModal);
+        
+        $(".shoppingcart, #shoppingcart").click(function(){
+              $("#cartModal").modal("show");
+            console.log("modal clicked");
+          });
+        
+    })()
+    
+    
     
 
 
