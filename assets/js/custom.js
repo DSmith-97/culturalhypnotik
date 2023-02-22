@@ -184,6 +184,11 @@
 		});
 	}
     
+    // set home url for dev and prod
+    if (location.hostname !== "127.0.0.1") { 
+        $(".logo").attr('href', "/culturalhypnotik/index.html");
+    }
+    
     function getProducts() {
         var allProducts;
         
