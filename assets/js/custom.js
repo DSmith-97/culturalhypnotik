@@ -253,41 +253,40 @@
         updateProduct("001", "color", "white");
     });
     
+    //add current price to array of prices
+            var currentID = localStorage.getItem("currentID") ? localStorage.getItem("currentID") : localStorage.setItem("currentID", '');
+    
     <!--- store shopping card info  ---->
     (function calcuateCartCount() {
+       
+        var shoppingCartCount = localStorage.getItem("shoppingCartCount") ? localStorage.getItem("shoppingCartCount") : localStorage.setItem("shoppingCartCount", 0);
 
-        localStorage.getItem("shoppingCartCount") ? localStorage.getItem("shoppingCartCount") : localStorage.setItem("shoppingCartCount", 0);
+        var cartsubtotal = localStorage.getItem("cartsubtotal") ? localStorage.getItem("cartsubtotal") : localStorage.setItem("cartsubtotal", 0);
+        
         var cartCount = parseInt(localStorage.getItem("shoppingCartCount"));
-
-        $(".addToCart").click(function(){
-            cartCount+=1;
-            localStorage.setItem("shoppingCartCount", cartCount);
-            $(".cartNum").val('');
-            $(".cartNum").val(localStorage.getItem("shoppingCartCount"));
-        })
-         $(".cartNum").val(localStorage.getItem("shoppingCartCount"));
+        var carthasitems = $(".cartprice")[0];
+        var carttotal = carthasitems ? parseInt($(".cartprice")[0].innerHTML) : 0;
+        var cartsubtotal = 0;
+        
+        $(".cartNum").val(localStorage.getItem("shoppingCartCount"));
         
         
         <!---  Shopping Cart Modal  --->
         var aModal = '$("body").append('+
             '<div class="modal fade" id="cartModal" role="dialog">'+
-              '<div class="modal-dialog">'+
+              '<div class="modal-dialog modal-dialog-scrollable">'+
 
                 '<!-- Modal content-->'+
                   '<div class="modal-content">'+
                     '<div class="modal-header">'+
-                      '<button type="button" class="close" data-dismiss="modal">&times;</button>'+
-                      '<h4 class="modal-title">Shopping Cart</h4>'+
+                      '<h5 class="modal-title" style="line-height: 2">Shopping Cart</h5>'+
+                      '<h5 style="margin-top: 10px; margin-right: 22px;">Subtotal: $<span id="cartsubtotal">0</h5>'+
+                        
                     '</div>'+
-                    '<div class="modal-body">'+
-                      '<p>Your Items:</p>'+
-                        '<div>'+
-                            '<ul>'+
-                                '<ul>Item 1</ul>'+
-                                '<ul>Item 2</ul>'+
-                                '<ul>Item 2</ul>'+
-                            '</ul>'+
-                        '</div>'+
+                    '<div class="modal-body" style="height: 240px">'+
+                        '<div id="itemslist">'+
+
+                         '</div>'+
                     '</div>'+
                     '<div class="modal-footer">'+
                       '<button type="button" class="btn btn-primary" data-dismiss="modal">Proceed to Checkout!</button>'+
@@ -297,13 +296,70 @@
                '</div>'+
           '</div>")';
                 
-
         $("body").append(aModal);
         
         $(".shoppingcart, #shoppingcart").click(function(){
-              $("#cartModal").modal("show");
+            $("#cartModal").modal("show");
             console.log("modal clicked");
-          });
+        });
+        
+        
+        //  Item Objects  --->        
+        var cartitem = 
+            [
+                { 'shirt' : 
+                     '<div class="row" style="padding: 10px; margin-left: 10px">'+
+                        '<div class="col-4" style="padding: 10px; margin-left: 10px;">'+
+                            '<div>'+
+                                '<img class="pull-left" style="width: 120px; height: 120px; margin-left: -20px" src="/assets/images/blk_smurf_hoodie.png" alt="">'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="col-7" style="padding: 10px;">'+
+                            '<p id="carttitle" style="font-size: small; font-weight: bold; margin-top: 15px;">Smurf Hoodie - Black</p>'+
+                            '<div class="cartprice" style="font-size: small; font-weight: bolder">$52.00</div>'+
+                            '<div class="cartsize" style="font-size: small; font-weight: bold">XL</div>'+
+                            '<div class="cartcounter" style="font-size: small">- 1 +</div>'+
+                        '</div>'
+                }
+            ];
+        
+        var cartContents = $("#itemslist")[0].innerHTML;
+        
+        localStorage.getItem("itemslistcontent") ? localStorage.getItem("itemslistcontent") : localStorage.setItem("itemslistcontent", '');
+        var itemsliststore = localStorage.getItem("itemslistcontent");
+        $("#itemslist").append(itemsliststore);
+        
+        
+        localStorage.getItem("cartTotalCount") ? localStorage.getItem("cartTotalCount") : localStorage.setItem("cartTotalCount", 0);
+        
+        
+        // display localStorage number in the input box
+            $("#cartsubtotal").val(localStorage.subtotal);
+        
+        //initialize cart localStorage to 0 if there is no value set
+            localStorage.subtotal = localStorage.subtotal > 0 ? localStorage.subtotal : 0;
+        
+        $(".addToCart").click(function() {
+            cartCount+=1;
+            localStorage.setItem("shoppingCartCount", cartCount);
+            $(".cartNum").val('');
+            $(".cartNum").val(localStorage.getItem("shoppingCartCount"));
+            
+            
+            var currentitem = localStorage.getItem("currentitem") ? localStorage.getItem("currentitem") : localStorage.setItem("currentitem", cartitem);
+        
+            $("#itemslist").append(currentitem);
+            localStorage.setItem("itemslistcontent", $("#itemslist")[0].innerHTML);
+            
+            
+             //take local storage number and add to currentitem price
+            var newPrice = parseInt(localStorage.subtotal) + parseInt(localStorage.currentitemprice);
+            
+             //display the updated localStorage number in the input box
+              $("#cartsubtotal")[0].innerHTML = parseInt(newPrice);
+                localStorage.subtotal = parseInt(newPrice);
+            
+        });
         
     })()
     

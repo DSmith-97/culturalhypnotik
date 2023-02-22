@@ -242,6 +242,11 @@
     <script src="../assets/js/custom.js"></script>
 
     <script>
+        
+//        var currentitem = localStorage.getItem("currentitem") ? localStorage.getItem("currentitem") : localStorage.setItem("currentitem", cartitem);
+        
+        
+//        var currentID = localStorage.getItem("currentID") ? localStorage.getItem("currentID") == "blackexcellence" : localStorage.setItem("currentID", "blackexcellence");
 
         $(function() {
             var selectedClass = "";
@@ -257,21 +262,64 @@
             });
         });
         
+        var singleitemprice = 38;
+
         // Calculate shopping cart total items
-        (function calculateTotal(){
-            $(".total .singlePrice")[0].innerText = 38;
+        (function calculateTotal() {
+            
+            $(".total .singlePrice")[0].innerText = singleitemprice;
             $("input[name='quantity']").on('change', function(){ 
 
-                $(".total .singlePrice")[0].innerText = (38.00 * $("input[name='quantity']").val());
+                $(".total .singlePrice")[0].innerText = (singleitemprice * $("input[name='quantity']").val());
             });
         })();
         
         // Update thumbnails
-        $(".img-thumbnail").click(function(){
+        $(".img-thumbnail").click(function() {
             var imgSrc = $(this).attr('src');
             $("#main-image").attr("src", imgSrc);
         })
         
+        
+        // create cart item and add to shopping cart
+         var cartitem = 
+                    '<div id="blackexcellence" class="itemcontainer" style="padding: 10px; margin-left: 10px">'+
+                     '<div class="row" style="padding: 10px; margin-left: 10px">'+
+                        '<div class="col-4" style="padding: 10px; margin-left: 10px;">'+
+                            '<div>'+
+                                '<img class="pull-left" style="width: 122px; height: 138px; margin-left: -40px" src="/assets/images/be_locks.png" alt="">'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="col-7" style="padding: 10px;">'+
+                            '<p id="carttitle" style="font-size: small; font-weight: bold; margin-top: 15px;">Black Excellence Hoodie - Black</p>'+
+                            '<div style="font-size: small; font-weight: bolder">$<span class="cartprice">38.00</div>'+
+                            '<div class="cartsize" style="font-size: small; font-weight: bold">XL</div>'+
+                            '<div class="cartcounter" style="font-size: small">- 1 +</div>'+
+                        '</div>'+
+                    '</div>';
+        
+        var currentitem = cartitem;
+        localStorage.setItem("currentitem", currentitem);        
+        var currentID = localStorage.setItem("currentID", "blackexcellence");
+        var currentitemprice = 38;
+        localStorage.setItem("currentitemprice", currentitemprice);
+        
+        
+//        $(".addToCart").click(function() {
+//            if($(".cartprice").length === 0) {
+//           $(".cartsubtotal")[0].innerHTML = singleitemprice;
+//        }
+//            
+//            var numberOfItems = $(".itemcontainer").length;
+//            $("#itemslist").append(cartitem.smurfhoodie);
+//            
+//            localStorage.setItem("itemslistcontent", $("#itemslist")[0].innerHTML);
+//        });
+        
+        
+        
+//        localStorage.setItem("shoppingCartCount", 0);
+//        localStorage.setItem("itemslistcontent", '');
 
     </script>
 
