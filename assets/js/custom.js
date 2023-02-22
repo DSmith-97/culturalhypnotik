@@ -259,7 +259,7 @@
     });
     
     //add current price to array of prices
-            var currentID = localStorage.getItem("currentID") ? localStorage.getItem("currentID") : localStorage.setItem("currentID", '');
+    var currentID = localStorage.getItem("currentID") ? localStorage.getItem("currentID") : localStorage.setItem("currentID", '');
     
     <!--- store shopping card info  ---->
     (function calcuateCartCount() {

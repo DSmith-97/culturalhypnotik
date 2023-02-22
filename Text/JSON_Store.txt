@@ -7,3 +7,29 @@ Password:  RockDog2023
 Access JSON Bin: https://api.npoint.io/23367c8d18c3f0cfd2ef
 
 ChocLit Blue #012785
+
+<div class="hover-content">
+                                        <ul>
+                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <img src="assets/images/wht_celebratebh_hoodie_n.png" alt="" style="width: 280px; height: 355px;">
+
+templatemo-hexashop
+culturalhypnotik
+
+
+product/celebrateBlackHistory-single.html
+product/choclit-single.html
+product/melanin-hoodie.html
+product/melanin-single.html
+
+
+
+
+
+
+
+
