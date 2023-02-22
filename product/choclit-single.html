@@ -277,15 +277,15 @@
             });
         });
         
-        var singleitemprice = 19;
-        
-        (function calculateTotal() {
-            $(".total .singlePrice")[0].innerText = singleitemprice;
-            $("input[name='quantity']").on('change', function(){ 
-
-                    $(".total .singlePrice")[0].innerText = (singleitemprice * $("input[name='quantity']").val());
-            });
-        })();
+//        var singleitemprice = 19;
+//        
+//        (function calculateTotal() {
+//            $(".total .singlePrice")[0].innerText = singleitemprice;
+//            $("input[name='quantity']").on('change', function(){ 
+//
+//                    $(".total .singlePrice")[0].innerText = (singleitemprice * $("input[name='quantity']").val());
+//            });
+//        })();
         
         // Update thumbnails
         $(".img-thumbnail").click(function() {
@@ -311,7 +311,7 @@
                     '</div>';
         
         // Initialize Product Data
-  var currentitem = cartitem;
+        var currentitem = cartitem;
         localStorage.setItem("currentitem", currentitem);
         var currentID = localStorage.setItem("currentID", "choclit");
         var currentitemprice = 19;

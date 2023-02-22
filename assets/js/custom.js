@@ -261,12 +261,12 @@
        
         var shoppingCartCount = localStorage.getItem("shoppingCartCount") ? localStorage.getItem("shoppingCartCount") : localStorage.setItem("shoppingCartCount", 0);
 
-        var cartsubtotal = localStorage.getItem("cartsubtotal") ? localStorage.getItem("cartsubtotal") : localStorage.setItem("cartsubtotal", 0);
+//        var cartsubtotal = localStorage.getItem("cartsubtotal") ? localStorage.getItem("cartsubtotal") : localStorage.setItem("cartsubtotal", 0);
         
         var cartCount = parseInt(localStorage.getItem("shoppingCartCount"));
         var carthasitems = $(".cartprice")[0];
         var carttotal = carthasitems ? parseInt($(".cartprice")[0].innerHTML) : 0;
-        var cartsubtotal = 0;
+//        var cartsubtotal = 0;
         
         $(".cartNum").val(localStorage.getItem("shoppingCartCount"));
         
@@ -356,10 +356,12 @@
             var newPrice = parseInt(localStorage.subtotal) + parseInt(localStorage.currentitemprice);
             
              //display the updated localStorage number in the input box
-              $("#cartsubtotal")[0].innerHTML = parseInt(newPrice);
+              
                 localStorage.subtotal = parseInt(newPrice);
-            
+                $("#cartsubtotal")[0].innerHTML = parseInt(newPrice);
         });
+        
+        $("#cartsubtotal")[0].innerHTML = parseInt(localStorage.subtotal);
         
     })()
     
