@@ -110,15 +110,6 @@
                 <div class="right-content">
                     <h4>Melanin Unisex Hoodie</h4>
                     <span class="price">$43.00</span>
-    <!--
-                    <ul class="stars">
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                    </ul>
-    -->
                     <span>
                         Description: Soft, Comfy, Cotton Fleece Hoodie
 
@@ -265,21 +256,36 @@
             });
         });
         
-        (function calculateTotal(){
-            $(".total .singlePrice")[0].innerText = 43;
-            $("input[name='quantity']").on('change', function(){ 
-
-                    $(".total .singlePrice")[0].innerText = (43.00 * $("input[name='quantity']").val());
-            });
-        })();
-        
         // Update thumbnails
-        $(".img-thumbnail").click(function(){
+        $(".img-thumbnail").click(function() {
             var imgSrc = $(this).attr('src');
             $("#main-image").attr("src", imgSrc);
         })
         
-
+        // create cart item and add to shopping cart
+         var cartitem = 
+            '<div id="melanin-hoodie" class="itemcontainer" style="padding: 10px; margin-left: 10px; margin-top: -40px;">'+
+             '<div class="row" style="padding: 10px; margin-left: 10px">'+
+                '<div class="col-4" style="padding: 10px; margin-left: 10px;">'+
+                    '<div>'+
+                        '<img class="pull-left" style="width: 122px; height: 138px; margin-left: -40px" src= "../assets/images/wht_melanin_hoodie2.png" alt="">'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-7" style="padding: 10px;">'+
+                    '<p id="carttitle" style="font-size: small; font-weight: bold; margin-top: 15px;">Melanin Hoodie - White</p>'+
+                    '<div style="font-size: small; font-weight: bolder">$<span class="cartprice">43.00</div>'+
+                    '<div class="cartsize" style="font-size: small; font-weight: bold">XL</div>'+
+                    '<div class="cartcounter" style="font-size: small">- 1 +</div>'+
+                '</div>'+
+            '</div>';
+        
+        // Initialize Product Data
+        var currentitem = cartitem;
+        localStorage.setItem("currentitem", currentitem);
+        var currentID = localStorage.setItem("currentID", "melanin-hoodie");
+        var currentitemprice = 19;
+        localStorage.setItem("currentitemprice", currentitemprice);
+        
     </script>
 
   </body>

@@ -187,7 +187,7 @@
                 <div class="col-lg-3">
                     <div class="first-item">
                         <div class="logo">
-                            <img src="../assets/images/dark-ch_logo.png" alt="hexashop ecommerce templatemo">
+                            <img src="../assets/images/dark-ch_logo.png" alt="choclit">
                         </div>
                         <ul>
                             <li><a href="#">Sunny Orlando, FL 33160, <br />United States</a></li>
@@ -277,16 +277,6 @@
             });
         });
         
-//        var singleitemprice = 19;
-//        
-//        (function calculateTotal() {
-//            $(".total .singlePrice")[0].innerText = singleitemprice;
-//            $("input[name='quantity']").on('change', function(){ 
-//
-//                    $(".total .singlePrice")[0].innerText = (singleitemprice * $("input[name='quantity']").val());
-//            });
-//        })();
-        
         // Update thumbnails
         $(".img-thumbnail").click(function() {
             var imgSrc = $(this).attr('src');
@@ -295,20 +285,20 @@
         
         // create cart item and add to shopping cart
          var cartitem = 
-                    '<div id="choclit" class="itemcontainer" style="padding: 10px; margin-left: 10px; margin-top: -40px;">'+
-                     '<div class="row" style="padding: 10px; margin-left: 10px">'+
-                        '<div class="col-4" style="padding: 10px; margin-left: 10px;">'+
-                            '<div>'+
-                                '<img class="pull-left" style="width: 122px; height: 138px; margin-left: -40px" src= "/culturalhypnotik/assets/images/choclit.png" alt="">'+
-                            '</div>'+
-                        '</div>'+
-                        '<div class="col-7" style="padding: 10px;">'+
-                            '<p id="carttitle" style="font-size: small; font-weight: bold; margin-top: 15px;">CHOC-LiT Tee - Navy</p>'+
-                            '<div style="font-size: small; font-weight: bolder">$<span class="cartprice">19.00</div>'+
-                            '<div class="cartsize" style="font-size: small; font-weight: bold">XL</div>'+
-                            '<div class="cartcounter" style="font-size: small">- 1 +</div>'+
-                        '</div>'+
-                    '</div>';
+            '<div id="choclit" class="itemcontainer" style="padding: 10px; margin-left: 10px; margin-top: -40px;">'+
+             '<div class="row" style="padding: 10px; margin-left: 10px">'+
+                '<div class="col-4" style="padding: 10px; margin-left: 10px;">'+
+                    '<div>'+
+                        '<img class="pull-left" style="width: 122px; height: 138px; margin-left: -40px" src= "../assets/images/choclit.png" alt="">'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-7" style="padding: 10px;">'+
+                    '<p id="carttitle" style="font-size: small; font-weight: bold; margin-top: 15px;">CHOC-LiT Tee - Navy</p>'+
+                    '<div style="font-size: small; font-weight: bolder">$<span class="cartprice">19.00</div>'+
+                    '<div class="cartsize" style="font-size: small; font-weight: bold">XL</div>'+
+                    '<div class="cartcounter" style="font-size: small">- 1 +</div>'+
+                '</div>'+
+            '</div>';
         
         // Initialize Product Data
         var currentitem = cartitem;
@@ -316,9 +306,7 @@
         var currentID = localStorage.setItem("currentID", "choclit");
         var currentitemprice = 19;
         localStorage.setItem("currentitemprice", currentitemprice);
-
         
-
     </script>
 
   </body>

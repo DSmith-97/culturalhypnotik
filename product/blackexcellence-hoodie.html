@@ -40,32 +40,58 @@
 
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
-        <div class="container">
+         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="/index.html" class="logo">
+                        <a href="index.html" class="logo">
                             <img src="../assets/images/ch7_logo.png">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="/index.html" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="/index.html#latest">Latest</a></li>
-                            <li class="scroll-to-section"><a href="/index.html#popular">Popular</a></li>
-                            <li class="scroll-to-section"><a href="/index.html#kids">Kid's</a></li>
-                            <ul>
-                                <div class="shoppingcart d-block d-xs-none">
-                                    <label for="cartNum"><i class="fa fa-shopping-cart" style="font-size:24px"></i></label>
-                                    <input disabled="" type="text" class="cartNum" style="width: 24px;height: 26px; margin-top: 6px;" placeholder="0"> Item(s)
+                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#latest">Latest</a></li>
+                            <li class="scroll-to-section"><a href="#popular">Popular</a></li>
+                            <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
+<!--
+                            <li class="submenu">
+                                <a href="javascript:;">Pages</a>
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="admin.html">Admin</a></li>
+                                    <li><a href="single-product.html">Single Product</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </li>
+-->
+<!--
+                            <li class="submenu">
+                                <a href="javascript:;">Features</a>
+                                <ul>
+                                    <li><a href="#">Features Page 1</a></li>
+                                    <li><a href="#">Features Page 2</a></li>
+                                    <li><a href="#">Features Page 3</a></li>
+                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
+                                </ul>
+                            </li>
+-->
+                            <li class="scroll-to-section"><a href="#about">About</a></li>
+                             <ul>
+                                <div class="shoppingcart d-block d-xs-none yourShoppingCart">
+                                    <label for="cartNum">Shopping Cart</label>
+                                    <input disabled="" type="text" class="cartNum" style="width: 24px; height: 26px; margin-top: 6px; text-align: center" placeholder="0">
                                 </div>
                             </ul>
                         </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
                         <!-- ***** Menu End ***** -->
                     </nav>
                 </div>
-                <div id="shoppingcart" class="d-block d-md-none d-xs-none" style="background-color: lightgray; opacity: 50%">
+                <div id="shoppingcart" class="d-block d-lg-none d-md-none d-xs-none yourShoppingCart">
                     <label for="cartNum">Shopping Cart</label>
                     <input disabled="" type="text" class="cartNum" style="width: 24px;height: 26px; margin-top: 6px;" placeholder="0"> Item(s)
                 </div>
@@ -287,7 +313,7 @@
                      '<div class="row" style="padding: 10px; margin-left: 10px">'+
                         '<div class="col-4" style="padding: 10px; margin-left: 10px;">'+
                             '<div>'+
-                                '<img class="pull-left" style="width: 110px; height: 138px; margin-left: -33px" src="/assets/images/be_hoodie.png" alt="">'+
+                                '<img class="pull-left" style="width: 110px; height: 138px; margin-left: -33px" src="../assets/images/be_hoodie.png" alt="">'+
                             '</div>'+
                         '</div>'+
                         '<div class="col-7" style="padding: 10px;">'+

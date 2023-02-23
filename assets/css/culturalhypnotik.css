@@ -220,6 +220,7 @@ body {
 
 #shoppingcart{
     text-align: center;
+    margin-top: -15px;
 }
 
 
@@ -1144,7 +1145,12 @@ Latest
   .hoodiechevron-left {
       display: none;
     }
-    
+     .left-pop-chevy {
+        display: none;
+    }
+    .right-pop-chevy {
+        display: none;
+    }
     
 }
 
@@ -1158,11 +1164,22 @@ Latest
     }
 */
 
+/*
+left-pop-chevy fa fa-chevron-left" style="color: grey; margin-top: 220px; position: absolute; margin-left: -6px; font-size: x-large;
+right-pop-chevy fa fa-chevron-right" style="color: grey; margin-top: 227px; position: absolute; margin-left: 383px; font-size: x-large;
+*/
+
 @media (min-width: 768px) {
     .left-chevy {
         display: none;
     }
     .right-chevy {
+        display: none;
+    }
+    .left-pop-chevy {
+        display: none;
+    }
+    .right-pop-chevy {
         display: none;
     }
 }
@@ -1199,6 +1216,22 @@ Latest
         margin-top: 140px;
         position: absolute;
         margin-left: 320px;
+        font-size: x-large;
+    }
+    
+    .left-pop-chevy {
+        color: grey; 
+        margin-top: 220px; 
+        position: absolute; 
+        margin-left: -6px; 
+        font-size: x-large;
+    }
+    
+    .right-pop-chevy {
+        color: grey; 
+        margin-top: 227px; 
+        position: absolute; 
+        margin-left: 383px; 
         font-size: x-large;
     }
 
@@ -2028,6 +2061,7 @@ Single Product Page
   width: 100%;
   overflow: hidden;
   margin-bottom: 30px;
+  margin-top: 15px;
 }
 
 #product .right-content {
