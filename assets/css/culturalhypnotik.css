@@ -326,6 +326,12 @@ body {
    .shoppingcart{
     margin-left:  50px;   
   }
+    input.cartNum {
+    width: 35px; 
+    height: 26px; 
+    margin-top: 6px; 
+    text-align: center;
+    }  
 }
 
 
@@ -335,6 +341,12 @@ body {
    .shoppingcart{
     margin-left: 50px;  
   }
+    input.cartNum {
+    width: 35px; 
+    height: 26px; 
+    margin-top: 6px; 
+    text-align: center;
+    }
 }
 
 @media (max-width: 280px) {
@@ -353,12 +365,14 @@ body {
 }
 */
 
+/*
 input.cartNum {
     width: 35px; 
     height: 26px; 
     margin-top: 6px; 
     text-align: center;
 }
+*/
 
 .main-border-button a {
   font-size: 13px;
