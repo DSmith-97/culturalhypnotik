@@ -305,6 +305,13 @@ body {
    .shoppingcart{
     margin-left:  70px;   
   }
+    
+    input.cartNum {
+        width: 35px; 
+        height: 33px; 
+        margin-top: 14px; 
+        text-align: center;
+    }
 }
 
 /*
@@ -2189,7 +2196,7 @@ Single Product Page
   width: 100%;
   overflow: hidden;
   margin-bottom: 30px;
-  margin-top: 15px;
+  margin-top: -8px;
 }
 
 #product .right-content {
