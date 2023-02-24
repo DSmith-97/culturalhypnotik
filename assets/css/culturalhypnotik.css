@@ -384,7 +384,7 @@ body {
     input.cartNum {
     width: 35px; 
     height: 30px; 
-    margin-top: 6px; 
+    margin-top: 0px; 
     text-align: center;
     }
 }
