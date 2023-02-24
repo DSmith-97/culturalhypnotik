@@ -294,7 +294,8 @@
                          '</div>'+
                     '</div>'+
                     '<div class="modal-footer">'+
-                      '<button type="button" class="btn btn-primary" data-dismiss="modal">Proceed to Checkout!</button>'+
+                    '<button type="button" id="emptycart" class="btn btn-link">Empty Cart</button>'+
+                      '<button type="button" class="btn btn-primary" data-dismiss="modal">Checkout</button>'+
                       '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>'+
                     '</div>'+
                   '</div>'+
@@ -303,12 +304,12 @@
                 
         $("body").append(aModal);
         
+        $("#success-alert").hide();
+        
         $(".shoppingcart, #shoppingcart").click(function(){
             $("#cartModal").modal("show");
-            console.log("modal clicked");
         });
-        
-        
+                
         //  Item Objects  --->        
         var cartitem = 
             [
@@ -345,6 +346,8 @@
             localStorage.subtotal = localStorage.subtotal > 0 ? localStorage.subtotal : 0;
         
         $(".addToCart").click(function() {
+            $("#success-alert").fadeIn("slow").delay(2500).fadeOut("slow");
+            
             cartCount+=1;
             localStorage.setItem("shoppingCartCount", cartCount);
             $(".cartNum").val('');
@@ -367,6 +370,21 @@
         });
         
         $("#cartsubtotal")[0].innerHTML = parseInt(localStorage.subtotal);
+        
+        // clear shopping cart
+        $("#emptycart").click(function(){
+            $("#itemslist")[0].innerHTML='';
+            localStorage.setItem("shoppingCartCount", 0);
+            localStorage.setItem("itemslistcontent", '');
+            localStorage.setItem("currentitem", '');
+            localStorage.setItem("pricelist", '');
+            localStorage.setItem("currentID", '');
+            localStorage.setItem("currentitemprice", 0);
+            localStorage.setItem("subtotal", 0);
+            $(".cartNum").val('');
+            $("#cartsubtotal")[0].innerHTML = '';
+            window.location.reload();
+        });
         
     })()
     
