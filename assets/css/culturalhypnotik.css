@@ -884,20 +884,217 @@ banner
 }
 
 .main-banner .left-content .inner-content h4 {
-  color: #fff;
-  margin-top: -10px;
-  font-size: 52px;
-  font-weight: 700;
-  margin-bottom: 20px;
+    color: #fff;
+    margin-top: -807px;
+    font-size: 86px;
+    font-weight: 700;
+    margin-left: 181px;
 }
+
+
+@media (max-width: 2560px) {
+  .main-banner .left-content .inner-content h4 {
+        color: #fff;
+        margin-top: -497px;
+        font-size: 39px;
+        font-weight: 700;
+        margin-left: 87px;
+    }
+    
+    #lead-sale {
+        font-weight: bolder;
+        position: absolute;
+        margin-top: -945px;
+        border: 5px solid white;
+        width: 1166px;
+        margin-left: -56px;
+        border-radius: 4px;
+        height: 1371px;
+    }
+    
+    #getitnow {
+        background-color: lightgrey;
+        border: 1px solid black;
+        border-color: aliceblue;
+        /* opacity: 0100; */
+        padding: 12px;
+        border-radius: 0px;
+        position: absolute;
+        margin-top: 713px;
+        margin-left: 460px;
+        color: black;
+        width: 251px;
+        text-align: center;
+        font-size: 35px;
+    }
+    
+    #lead-sale .sale-text {
+        animation: blinker 1s linear infinite;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        font-size: 37px;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 50%;
+        }
+    }
+}
+
+
+@media (max-width: 1440px) {
+  .main-banner .left-content .inner-content h4 {
+        color: #fff;
+        margin-top: -497px;
+        font-size: 39px;
+        font-weight: 700;
+        margin-left: 87px;
+    }
+    
+    #lead-sale {
+        font-weight: bolder;
+        position: absolute;
+        margin-top: -613px;
+        border: 3px solid white;
+        width: 642px;
+        margin-left: -77px;
+        border-radius: 4px;
+        height: 902px;
+    }
+    
+    #getitnow {
+            background-color: lightgrey;
+        border: 1px solid black;
+        border-color: aliceblue;
+        /* opacity: 0100; */
+        padding: 12px;
+        border-radius: 0px;
+        position: absolute;
+        margin-top: 607px;
+        margin-left: 164px;
+        color: black;
+        width: 163px;
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    #lead-sale .sale-text {
+        animation: blinker 1s linear infinite;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        font-size: 37px;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 50%;
+        }
+    }
+}
+
+
+@media (max-width: 1024px) {
+  .main-banner .left-content .inner-content h4 {
+        color: #fff;
+        margin-top: -390px;
+        font-size: 39px;
+        font-weight: 700;
+        margin-left: -9px;
+    }
+    
+    #lead-sale {
+        font-weight: bolder;
+        position: absolute;
+        margin-top: -472px;
+        border: 3px solid white;
+        width: 453px;
+        margin-left: -85px;
+        border-radius: 4px;
+        height: 625px;
+    }
+    
+    #getitnow {
+        background-color: lightgrey;
+        border: 1px solid black;
+        border-color: aliceblue;
+        /* opacity: 0100; */
+        padding: 12px;
+        border-radius: 0px;
+        position: absolute;
+        margin-top: 397px;
+        margin-left: 63px;
+        color: black;
+        width: 163px;
+        text-align: center;
+        }
+    
+    #lead-sale .sale-text {
+        animation: blinker 1s linear infinite;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        font-size: x-large;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 50%;
+        }
+    }
+}
+
 
 @media (max-width: 768px) {
   .main-banner .left-content .inner-content h4 {
-      color: #fff;
-      margin-top: -227px;
-      font-size: 39px;
-      font-weight: 700;
-      margin-bottom: 20px;
+        color: #fff;
+        margin-top: -390px;
+        font-size: 39px;
+        font-weight: 700;
+        margin-left: 87px;
+    }
+    
+    #lead-sale{
+        font-weight: bolder;
+        position: absolute;
+        margin-top: -489px;
+        border: 3px solid white;
+        width: 91%;
+        margin-left: -77px;
+        border-radius: 4px;
+        height: 953px;
+    }
+    
+    #getitnow {
+        background-color: lightgrey;
+        border: 1px solid black;
+        border-color: aliceblue;
+        /* opacity: 0100; */
+        padding: 12px;
+        border-radius: 0px;
+        position: absolute;
+        margin-top: 664px;
+        margin-left: 118px;
+        color: black;
+        width: 300px;
+        text-align: center;
+        font-size: xx-large;
+        }
+    
+    #lead-sale .sale-text {
+        animation: blinker 1s linear infinite;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        font-size: x-large;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 50%;
+        }
     }
 }
 
@@ -952,23 +1149,69 @@ banner
 @media (max-width: 375px) {
   .main-banner .left-content .inner-content h4 {
       color: #fff;
-      margin-top: -171px;
+      margin-top: -222px;
       font-size: 31px;
       font-weight: 700;
       margin-bottom: 20px;
     }
     
-    #lead-sale{
+    #lead-sale {
         font-weight: bolder;
         position: absolute;
-        margin-top: -225px;
+        margin-top: -223px;
         border: 3px solid white;
         width: 84%;
         margin-left: 4%;
         border-radius: 4px;
-        height: 445px;
+        height: 446px;
     }
     
+     .main-banner .left-content .inner-content h4 {
+          color: #fff;
+          margin-top: -171px;
+          font-size: 31px;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+    
+    #getitnow {
+        background-color: lightgrey;
+        border: 1px solid black;
+        border-color: aliceblue;
+        /* opacity: 0100; */
+        padding: 12px;
+        border-radius: 0px;
+        position: absolute;
+        margin-top: 265px;
+        margin-left: -43px;
+        color: black;
+        width: max-content;
+        font-size: 16px;
+    }
+}
+    
+    
+    @media (max-width: 320px) {
+      .main-banner .left-content .inner-content h4 {
+          color: #fff;
+          margin-top: -145px;
+          font-size: 31px;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+        
+   #lead-sale {
+        font-weight: bolder;
+        position: absolute;
+        margin-top: -188px;
+        border: 3px solid white;
+        width: 84%;
+        margin-left: 4%;
+        border-radius: 4px;
+        height: 368px;
+    }
+    
+
     #lead-sale .sale-text {
       animation: blinker 1s linear infinite;
         color: white;
@@ -982,21 +1225,24 @@ banner
     }
     
     
-#main-sale-button{
-    background-color: lightgrey;
-    border: 1px solid lightgrey;
-    border-color: white;
-    opacity: 85%;
-    padding: 12px;
-    border-radius: 0px;
-    position: absolute;
-    margin-top: 274px;
-    margin-left: 120px;
-    color: white;
+    #getitnow {
+        background-color: lightgray;
+        border: 1px solid black;
+        border-color: aliceblue;
+        /* opacity: 0100; */
+        padding: 12px;
+        border-radius: 0px;
+        position: absolute;
+        margin-top: 170px;
+        margin-left: -43px;
+        color: black;
+        width: max-content;
+        font-size: 14px;
+        }
     }
-}
 
 
+/*
 @media (max-width: 320px) {
   .main-banner .left-content .inner-content h4 {
       color: #fff;
@@ -1005,7 +1251,19 @@ banner
       font-weight: 700;
       margin-bottom: 20px;
     }
+    
+      #lead-sale {
+        font-weight: bolder;
+        position: absolute;
+        margin-top: -187px;
+        border: 3px solid orange;
+        width: 84%;
+        margin-left: 4%;
+        border-radius: 4px;
+        height: 367px;
+    }
 }
+*/
 
 
 .main-banner .left-content .inner-content span {
