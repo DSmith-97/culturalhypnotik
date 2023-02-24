@@ -51,9 +51,13 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <a class="logo">
                             <img src="assets/images/ch7_logo.png">
                         </a>
+                        <div class="shoppingcart d-block d-xs-none yourShoppingCart">
+                           <i class="fa fa-shopping-cart fa-2x" style="margin-top: 1px" aria-hidden="true"></i>
+                            <input disabled="" type="text" class="cartNum" style="width: 24px; height: 26px; margin-top: 6px; text-align: center" placeholder="0">
+                        </div>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
@@ -84,23 +88,31 @@ https://templatemo.com/tm-571-hexashop
                             </li>
 -->
                             <li class="scroll-to-section"><a href="#about">About</a></li>
+<!--
                              <ul>
                                 <div class="shoppingcart d-block d-xs-none yourShoppingCart">
                                     <label for="cartNum">Shopping Cart</label>
                                     <input disabled="" type="text" class="cartNum" style="width: 24px; height: 26px; margin-top: 6px; text-align: center" placeholder="0">
                                 </div>
                             </ul>
+-->
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
                         <!-- ***** Menu End ***** -->
                     </nav>
+                    <div class="shoppingcart d-block d-xs-none yourShoppingCart">
+                        <label for="cartNum">Shopping Cart</label>
+                        <input disabled="" type="text" class="cartNum" style="width: 24px; height: 26px; margin-top: 6px; text-align: center" placeholder="0">
+                    </div>
                 </div>
+<!--
                 <div id="shoppingcart" class="d-block d-lg-none d-md-none d-xs-none yourShoppingCart">
                     <label for="cartNum">Shopping Cart</label>
                     <input disabled="" type="text" class="cartNum" style="width: 24px;height: 26px; margin-top: 6px;" placeholder="0"> Item(s)
                 </div>
+-->
             </div>
         </div>
     </header>
