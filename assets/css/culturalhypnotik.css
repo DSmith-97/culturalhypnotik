@@ -1191,6 +1191,7 @@ banner
       animation: blinker 1s linear infinite;
         color: white;
         font-weight: bold;
+        font-size: 15px;
     }
 
     @keyframes blinker {
@@ -1270,6 +1271,7 @@ banner
       animation: blinker 1s linear infinite;
         color: white;
         font-weight: bold;
+        
     }
 
     @keyframes blinker {

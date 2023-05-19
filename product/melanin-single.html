@@ -121,6 +121,15 @@
                         <div class="left-content">
                             <h6>Size:</h6>
                         </div>
+                        <div id="size" class="btn-group" role="group" aria-label="Size Selector">
+                          <button type="radio" class="btn btn-primary" name="itemSize">SM</button>
+                          <button type="radio" class="btn btn-primary" name="itemSize">MD</button>
+                          <button type="radio" class="btn btn-primary" name="itemSize">LG</button>
+                          <button type="radio" class="btn btn-primary" name="itemSize">XL</button>
+                          <button type="radio" class="btn btn-primary" name="itemSize">2XL</button>
+                          <button type="radio" class="btn btn-primary" name="itemSize">3XL</button>
+                        </div>
+<!--
                         <div class="right-content">
                             <div>
                                 <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1); background-color: red" disabled>
@@ -142,6 +151,7 @@
                                 <label id="item2" for="item2">XXL</label>
                             </div>
                         </div>
+-->
                         <div class="total">
                             <h4>Total: $</h4><h4 class="singlePrice"> </h4>
                             <div class="main-border-button addToCart"><a href="#">Add To Cart</a></div>
@@ -268,10 +278,26 @@
                 '<div class="col-7" style="padding: 10px;">'+
                     '<p id="carttitle" style="font-size: small; font-weight: bold; margin-top: 15px;">Melanin Tee - White</p>'+
                     '<div style="font-size: small; font-weight: bolder">$<span class="cartprice">19.00</div>'+
-                    '<div class="cartsize" style="font-size: small; font-weight: bold">XL</div>'+
-                    '<div class="cartcounter" style="font-size: small">- 1 +</div>'+
+                    '<div class="cartsize" style="font-size: small; font-weight: bold"></div>'+
                 '</div>'+
             '</div>';
+        
+        // create cart item and add to shopping cart (Original Card Style)
+//         var cartitem = 
+//            '<div id="melanin" class="itemcontainer" style="padding: 10px; margin-left: 10px; margin-top: -40px;">'+
+//             '<div class="row" style="padding: 10px; margin-left: 10px">'+
+//                '<div class="col-4" style="padding: 10px; margin-left: 10px;">'+
+//                    '<div>'+
+//                        '<img class="pull-left" style="width: 122px; height: 138px; margin-left: -40px" src= "../assets/images/wht_melanin_tee.png" alt="">'+
+//                    '</div>'+
+//                '</div>'+
+//                '<div class="col-7" style="padding: 10px;">'+
+//                    '<p id="carttitle" style="font-size: small; font-weight: bold; margin-top: 15px;">Melanin Tee - White</p>'+
+//                    '<div style="font-size: small; font-weight: bolder">$<span class="cartprice">19.00</div>'+
+//                    '<div class="cartsize" style="font-size: small; font-weight: bold">XL</div>'+
+//                    '<div class="cartcounter" style="font-size: small">- 1 +</div>'+
+//                '</div>'+
+//            '</div>';
         
         // Initialize Product Data
         var currentitem = cartitem;

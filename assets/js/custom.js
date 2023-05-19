@@ -1,3 +1,5 @@
+<!--./assets/js/items.js-->
+
 (function ($) {
 	
 	"use strict";
@@ -266,7 +268,7 @@
        
         var shoppingCartCount = localStorage.getItem("shoppingCartCount") ? localStorage.getItem("shoppingCartCount") : localStorage.setItem("shoppingCartCount", 0);
 
-//        var cartsubtotal = localStorage.getItem("cartsubtotal") ? localStorage.getItem("cartsubtotal") : localStorage.setItem("cartsubtotal", 0);
+//        var cartsubtotal = localStorage.getItem("cartsubtotal") ? localStorage.getItem("cartsubtotal") :                      localStorage.setItem("cartsubtotal", 0);
         
         var cartCount = parseInt(localStorage.getItem("shoppingCartCount"));
         var carthasitems = $(".cartprice")[0];
@@ -309,6 +311,8 @@
         $(".shoppingcart, #shoppingcart").click(function(){
             $("#cartModal").modal("show");
         });
+        
+        
                 
         //  Item Objects  --->        
         var cartitem = 
@@ -331,6 +335,22 @@
         
         var cartContents = $("#itemslist")[0].innerHTML;
         
+         // Highight Size Selections
+        var currentItemSize = '';
+        $("[name='itemSize']").click(function(){
+            
+            //set local storage for size
+            currentItemSize = $(this)[0].innerText;
+            localStorage.setItem("currentItemSize", currentItemSize);
+            
+            setTimeout(function(){
+                $("[name='itemSize']").css("background-color" , "#007bff");
+                console.log($(this)[0].innerText + " clicked");
+                $(this).css("background-color", "blue");
+                
+            }, 500);
+        })
+        
         localStorage.getItem("itemslistcontent") ? localStorage.getItem("itemslistcontent") : localStorage.setItem("itemslistcontent", '');
         var itemsliststore = localStorage.getItem("itemslistcontent");
         $("#itemslist").append(itemsliststore);
@@ -345,31 +365,77 @@
         //initialize cart localStorage to 0 if there is no value set
             localStorage.subtotal = localStorage.subtotal > 0 ? localStorage.subtotal : 0;
         
+        // Add Item to Cart
         $(".addToCart").click(function() {
-            $("#success-alert").fadeIn("slow").delay(2500).fadeOut("slow");
             
-            cartCount+=1;
-            localStorage.setItem("shoppingCartCount", cartCount);
-            $(".cartNum").val('');
-            $(".cartNum").val(localStorage.getItem("shoppingCartCount"));
-            
-            
-            var currentitem = localStorage.getItem("currentitem") ? localStorage.getItem("currentitem") : localStorage.setItem("currentitem", cartitem);
-        
-            $("#itemslist").append(currentitem);
-            localStorage.setItem("itemslistcontent", $("#itemslist")[0].innerHTML);
-            
-            
-             //take local storage number and add to currentitem price
-            var newPrice = parseInt(localStorage.subtotal) + parseInt(localStorage.currentitemprice);
-            
-             //display the updated localStorage number in the input box
-              
-                localStorage.subtotal = parseInt(newPrice);
-                $("#cartsubtotal")[0].innerHTML = parseInt(newPrice);
+            if (!localStorage.getItem("currentItemSize")) {
+                alert("Please select a size!");
+            } else {
+                // get the contents of the shopping cart
+                var cartContents = $("#itemslist")[0].innerHTML;
+
+                // store the active item in memory
+                var currentitem = localStorage.getItem("currentitem") ? localStorage.getItem("currentitem") : localStorage.setItem("currentitem", cartitem);
+
+                // open the shopping cart modal if the same item already exists in the cart
+                // if the item is not already in the cart, add it without opening the cart modal
+                if (cartContents.includes(localStorage.currentID)) {
+                    $("#cartModal").modal("show");
+                } else {
+                    $("#success-alert").fadeIn("slow").delay(2500).fadeOut("slow");
+                    //$("#itemslist").append(currentitem);
+                }
+                
+                $("#itemslist").append(currentitem);
+
+                // increase the cart count by 1
+                cartCount+=1;
+                // store the new cart count in memory
+                localStorage.setItem("shoppingCartCount", cartCount);
+                // replace the old cart count number shown on the shopping cart with the new number 
+                $(".cartNum").val('');
+                $(".cartNum").val(localStorage.getItem("shoppingCartCount"));
+
+
+                //----//var currentitem = localStorage.getItem("currentitem") ? localStorage.getItem("currentitem") : localStorage.setItem("currentitem", cartitem);
+
+                //------//   $("#itemslist").append(currentitem);
+                localStorage.setItem("itemslistcontent", $("#itemslist")[0].innerHTML);
+
+
+                 //take local storage number and add to currentitem price
+                var newPrice = parseInt(localStorage.subtotal) + parseInt(localStorage.currentitemprice);
+
+                 //display the updated localStorage number in the input box
+
+                    localStorage.subtotal = parseInt(newPrice);
+                    $("#cartsubtotal")[0].innerHTML = parseInt(newPrice);
+
+                // increase the quantity counter by 1 when another item is added to the cart
+                var currentItemQuantity = parseInt($("#" + localStorage.currentID + "_quantity").val());
+
+    //if (currentItemQuantity > 0) {
+                    localStorage.setItem("currentItemQuantity", parseInt(currentItemQuantity) +1 );
+                    $("#" + localStorage.currentID + "_quantity").val(parseInt(localStorage.getItem("currentItemQuantity")));
+    //}
+
+                //set local storage for size
+                localStorage.setItem("currentItemSize", currentItemSize);      
+                
+                // add item size to shopping cart size field
+                $(".cartsize")[localStorage.shoppingCartCount - 1].innerText = localStorage.getItem("currentItemSize");
+            }
         });
         
         $("#cartsubtotal")[0].innerHTML = parseInt(localStorage.subtotal);
+        
+        $('#cartModal').on('shown.bs.modal', function() {
+             $(".plus").unbind().click(function() {
+                $("#cartsubtotal")[0].innerHTML = parseInt(localStorage.subtotal) + parseInt($(this).parent().attr("data-price"));
+                localStorage.setItem("subtotal", parseInt(localStorage.subtotal) + parseInt($(this).parent().attr("data-price")));
+                console.log($(this).parent().attr("data-price"));
+            })
+        })
         
         // clear shopping cart
         $("#emptycart").click(function(){
@@ -383,8 +449,11 @@
             localStorage.setItem("subtotal", 0);
             $(".cartNum").val('');
             $("#cartsubtotal")[0].innerHTML = '';
+            localStorage.setItem("currentItemSize", '');
             window.location.reload();
         });
+        
+       
         
     })()
     

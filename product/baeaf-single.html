@@ -278,8 +278,16 @@
                 '<div class="col-7" style="padding: 10px;">'+
                     '<p id="carttitle" style="font-size: small; font-weight: bold; margin-top: 15px;">BAE AF Tee - Black</p>'+
                     '<div style="font-size: small; font-weight: bolder">$<span class="cartprice">22.00</div>'+
-                    '<div class="cartsize" style="font-size: small; font-weight: bold">MD</div>'+
-                    '<div class="cartcounter" style="font-size: small">- 1 +</div>'+
+                    '<div class="cartsize" style="font-size: small; font-weight: bold">MD1</div>'+
+                    '<div class="cartcounter" style="font-size: small">'+
+                        '<div class="right-content">'+
+                            '<div class="quantity buttons_added" data-price=22>'+
+                                '<input type="button" value="-" class="baeaf-single minus">'+
+                                '<input id="baeaf_quantity" type="number" step="1" min="0" max="" name="quantity" value="0" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">'+
+                                '<input type="button" value="+" class="baeaf-single plus">'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
                 '</div>'+
             '</div>';
         
@@ -288,7 +296,56 @@
         localStorage.setItem("currentitem", currentitem);
         var currentID = localStorage.setItem("currentID", "baeaf");
         var currentitemprice = 22;
+        var currentItemQuantity = $("#baeaf_quantity").val();
         localStorage.setItem("currentitemprice", currentitemprice);
+        localStorage.setItem("currentItemQuantity", parseInt(currentItemQuantity));
+        
+//        $(".baeaf-single").click(function() {
+//            $("#cartsubtotal")[0].innerHTML = parseInt(localStorage.subtotal) + parseInt($(this).parent().attr("data-price"));
+//            localStorage.setItem("subtotal", parseInt(localStorage.subtotal) + parseInt($(this).parent().attr("data-price")));
+//            console.log($(this).parent().attr("data-price"));
+//        });
+        
+        
+//        $(".addToCart").click(function() {
+//            var cartCounter = parseInt(localStorage.getItem("shoppingCartCount"));
+//            
+//            if (cartCounter > 0) {
+//                $(".baeaf-single.plus").click(function() {
+//                localStorage.setItem("shoppingCartCount", parseInt(localStorage.getItem("shoppingCartCount")) + 1);
+//                localStorage.setItem("subtotal", $("#cartsubtotal")[0].innerHTML);
+//                
+//                $("#cartsubtotal")[0].innerHTML = parseInt($("#cartsubtotal")[0].innerHTML) + 22;
+//                $(".cartNum").val(parseInt(localStorage.getItem("shoppingCartCount")));
+//                console.log("localStot : " + localStorage.subtotal);
+//                })
+//
+//                $(".baeaf-single.minus").click(function() {
+//                    if (parseInt($("#baeaf_single_quantity").val()) > 1) {
+//                        localStorage.setItem("shoppingCartCount", parseInt(localStorage.getItem("shoppingCartCount")) - 1);
+//                        $("#cartsubtotal")[0].innerHTML = parseInt($("#cartsubtotal")[0].innerHTML) - 22;
+//                        localStorage.setItem("subtotal", $("#cartsubtotal")[0].innerHTML);
+//                        $(".cartNum").val(parseInt(localStorage.getItem("shoppingCartCount")));
+//                        console.log("localStot : " + localStorage.subtotal);
+//                    }
+//
+//                    if (parseInt($("#baeaf_single_quantity").val()) == 1) {
+//                        localStorage.setItem("shoppingCartCount", parseInt(localStorage.getItem("shoppingCartCount")) - 1);
+//                        $("#cartsubtotal")[0].innerHTML = parseInt($("#cartsubtotal")[0].innerHTML) - 22;
+//                        localStorage.setItem("subtotal", $("#cartsubtotal")[0].innerHTML);
+//                        $(".cartNum").val(parseInt(localStorage.getItem("shoppingCartCount")));
+//                        $("#baeaf").remove();
+//                    }
+//
+//
+//                //localStorage.setItem("subtotal", parseInt(localStorage.subtotal) + parseInt($(".plus").parents().eq(3).find(".cartprice").text()));
+//                //console.log("New Subtotal = " + localStorage.subtotal);
+//                //console.log("Price : " + $(this).parent("div").attr("data-price"));
+//                })
+//            }
+//            
+//            
+//        });
         
 
     </script>
