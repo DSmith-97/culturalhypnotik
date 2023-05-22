@@ -148,6 +148,14 @@ body {
     text-align: center;
 }
 
+.cartAdd {
+    border-radius: 14px; 
+    width: 90%; 
+    color: #fff; 
+    background-color: red; 
+    font-weight: bold;
+}
+
 @media (max-width: 320px) {
   .logo img{
     width: 180px

@@ -135,50 +135,23 @@
                             overproduction, so thank you for making thoughtful purchasing 
                             decisions!</p>
                     </span>
-                    <div class="quantity-content">
-                        <div class="left-content">
-                            <h6>Size:</h6>
+                     <div class="quantity-content">
+                        <div class="left-content" style="width: 100%">
+                            <h6 >Size:</h6>                           
                         </div>
-                        <div class="right-content">
-                            <div>
-                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1); background-color: red" disabled>
-                                <label id="item2" for="item2">X</label>&nbsp;&nbsp;
-                                
-                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)" disabled>
-                                <label id="item2" for="item2">S</label>&nbsp;&nbsp;
-                                
-                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
-                                <label id="item2" for="item2">M</label>&nbsp;&nbsp;
-                                
-                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
-                                <label id="item2" for="item2">L</label>&nbsp;&nbsp;
-                                
-                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
-                                <label id="item2" for="item2">XL</label>&nbsp;&nbsp;
-                                
-                                <input id="item2" name="item2" type="checkbox" style="transform: scale(1.1)">
-                                <label id="item2" for="item2">XXL</label>
-                            </div>
-                        </div>
-                        <div class="total">
-                            <h4>Total: $</h4><h4 class="singlePrice"> </h4>
-                            <div class="main-border-button addToCart"><a href="#">Add To Cart</a></div>
-                        </div>
-<!--
-                    <div class="left-content" style="align-content: center">
-                        <h6>No. of Orders</h6>
-                    </div>
-                    <div class="right-content" style="align-content: center">
-                        <div class="quantity buttons_added">
-                            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
-                        </div>
-                        <div class="total pull-right">
-                            <h4>Total: $</h4><h4 class="singlePrice"> </h4><h4></h4>
-                            <div class="main-border-button addToCart"><a href="#">Add To Cart</a></div>
+                        <div id="size" class="btn-group" role="group" aria-label="Size Selector">
+                          <button type="radio" class="btn btn-primary" name="itemSize">SM</button>
+                          <button type="radio" class="btn btn-primary" name="itemSize">MD</button>
+                          <button type="radio" class="btn btn-primary" name="itemSize">LG</button>
+                          <button type="radio" class="btn btn-primary" name="itemSize">XL</button>
+                          <button type="radio" class="btn btn-primary" name="itemSize">2XL</button>
+                          <button type="radio" class="btn btn-primary" name="itemSize">3XL</button>
+                        </div><br /><br />
+                        
+                        <div class="addToCart">
+                            <button class="cartAdd">Add To Cart</button>
                         </div>
                     </div>
--->
-                </div>
                 
             </div>
         </div>
@@ -290,14 +263,14 @@
         var singleitemprice = 38;
 
         // Calculate shopping cart total items
-        (function calculateTotal() {
-            
-            $(".total .singlePrice")[0].innerText = singleitemprice;
-            $("input[name='quantity']").on('change', function(){ 
-
-                $(".total .singlePrice")[0].innerText = (singleitemprice * $("input[name='quantity']").val());
-            });
-        })();
+//        (function calculateTotal() {
+//            
+//            $(".total .singlePrice")[0].innerText = singleitemprice;
+//            $("input[name='quantity']").on('change', function(){ 
+//
+//                $(".total .singlePrice")[0].innerText = (singleitemprice * $("input[name='quantity']").val());
+//            });
+//        })();
         
         // Update thumbnails
         $(".img-thumbnail").click(function() {
@@ -319,15 +292,18 @@
                             '<p id="carttitle" style="font-size: small; font-weight: bold; margin-top: 15px;">Black Excellence Hoodie - Black</p>'+
                             '<div style="font-size: small; font-weight: bolder">$<span class="cartprice">38.00</div>'+
                             '<div class="cartsize" style="font-size: small; font-weight: bold">XL</div>'+
-                            '<div class="cartcounter" style="font-size: small">- 1 +</div>'+
+                            '<button class="remove">Remove</button>'+
                         '</div>'+
                     '</div>';
+        
+
         
         var currentitem = cartitem;
         localStorage.setItem("currentitem", currentitem);        
         var currentID = localStorage.setItem("currentID", "blackexcellence");
         var currentitemprice = 38;
         localStorage.setItem("currentitemprice", currentitemprice);
+  
         
         
 //        $(".addToCart").click(function() {

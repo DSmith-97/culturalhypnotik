@@ -1,4 +1,6 @@
-<!--./assets/js/items.js-->
+//fetch('../assets/js/items.js')
+//.then((response) => response.json())
+//.then((item) => alert(item.products[0].title));
 
 (function ($) {
 	
@@ -310,6 +312,7 @@
         
         $(".shoppingcart, #shoppingcart").click(function(){
             $("#cartModal").modal("show");
+             removeCartItem();
         });
         
         
@@ -359,7 +362,7 @@
         localStorage.getItem("cartTotalCount") ? localStorage.getItem("cartTotalCount") : localStorage.setItem("cartTotalCount", 0);
         
         
-        // display localStorage number in the input box
+        // display subtotal number in the input box
             $("#cartsubtotal").val(localStorage.subtotal);
         
         //initialize cart localStorage to 0 if there is no value set
@@ -424,6 +427,16 @@
                 
                 // add item size to shopping cart size field
                 $(".cartsize")[localStorage.shoppingCartCount - 1].innerText = localStorage.getItem("currentItemSize");
+                
+                // reset size selection after item gets added to the cart
+                localStorage.setItem("currentItemSize", ""); 
+                
+                
+                 //***************** remove an item from shopping cart  *******************//
+                removeCartItem();
+                            
+
+        
             }
         });
         
@@ -437,8 +450,40 @@
             })
         })
         
-        // clear shopping cart
-        $("#emptycart").click(function(){
+        function removeCartItem() {        
+            $(".remove").unbind().click(function() {
+
+                // remove item by it's container
+                var pnt = $(this).closest(".itemcontainer");
+                pnt.remove();
+
+                // decriment the cart count storage variable
+                cartCount-=1;
+                // store the new cart count in memory
+                localStorage.setItem("shoppingCartCount", cartCount);
+                // replace the old cart count number shown on the shopping cart with the new number 
+                $(".cartNum").val('');
+                $(".cartNum").val(localStorage.getItem("shoppingCartCount"));
+
+                // update cart subtotal stored variable
+                var priceToSubtract = parseInt($(this).closest(".itemcontainer").find(".cartprice")[0].innerText);
+                localStorage.subtotal -= priceToSubtract;
+
+                //update the subtotal shown on card modal
+                $("#cartsubtotal")[0].innerText = localStorage.subtotal;
+
+                //reset shopping cart if last item gets removed
+                if (localStorage.shoppingCartCount == 0) {
+                    emptyShoppingCart();
+                }
+
+                // update items list in memory to match what's left in the cart
+                localStorage.itemslistcontent = $("#itemslist")[0].innerHTML
+            });
+        }
+        
+ 
+        function emptyShoppingCart() {
             $("#itemslist")[0].innerHTML='';
             localStorage.setItem("shoppingCartCount", 0);
             localStorage.setItem("itemslistcontent", '');
@@ -448,9 +493,14 @@
             localStorage.setItem("currentitemprice", 0);
             localStorage.setItem("subtotal", 0);
             $(".cartNum").val('');
-            $("#cartsubtotal")[0].innerHTML = '';
+            $("#cartsubtotal")[0].innerHTML = '0';
             localStorage.setItem("currentItemSize", '');
             window.location.reload();
+        }
+        
+        // clear shopping cart
+        $("#emptycart").click(function(){
+            emptyShoppingCart();
         });
         
        
