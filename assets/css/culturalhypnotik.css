@@ -156,6 +156,15 @@ body {
     font-weight: bold;
 }
 
+.size {
+    margin-left: 8%;
+    margin-bottom: 10px;
+}
+
+.cartButton {
+    margin-left: 8%;
+}
+
 @media (max-width: 320px) {
   .logo img{
     width: 180px

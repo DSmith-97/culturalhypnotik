@@ -340,7 +340,7 @@
         
          // Highight Size Selections
         var currentItemSize = '';
-        $("[name='itemSize']").click(function(){
+        $("[name='itemSize']").click(function() {
             
             //set local storage for size
             currentItemSize = $(this)[0].innerText;
@@ -349,9 +349,10 @@
             setTimeout(function(){
                 $("[name='itemSize']").css("background-color" , "#007bff");
                 console.log($(this)[0].innerText + " clicked");
-                $(this).css("background-color", "blue");
+                $(this).css("background-color", "red");
                 
             }, 500);
+             $(this).css("background-color", "red");
         })
         
         localStorage.getItem("itemslistcontent") ? localStorage.getItem("itemslistcontent") : localStorage.setItem("itemslistcontent", '');
