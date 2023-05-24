@@ -3,6 +3,19 @@
 //.then((item) => alert(item.products[0].title));
 
 (function ($) {
+    window.onload = function(){
+        console.log("Loaded logged");
+    }
+
+window.onbeforeunload = function(event) {
+    event = event || window.event;
+    if (event) {
+        // update items list in memory to match what's left in the cart
+        $("#itemslist")[0].innerHTML = localStorage.itemslistcontent;
+        $("#cartsubtotal")[0].innerText = localStorage.subtotal;
+        $(".cartNum").val(localStorage.shoppingCartCount);
+        }
+    }
 	
 	"use strict";
 	$('.owl-men-item').owlCarousel({
@@ -479,7 +492,7 @@
                 }
 
                 // update items list in memory to match what's left in the cart
-                localStorage.itemslistcontent = $("#itemslist")[0].innerHTML
+                localStorage.itemslistcontent = $("#itemslist")[0].innerHTML;
             });
         }
         
