@@ -3,7 +3,7 @@
 //.then((item) => alert(item.products[0].title));
 
 (function ($) {
-    window.onload = function(){
+    window.onload = function() {
         console.log("Loaded logged");
     }
 
@@ -448,9 +448,6 @@ window.onbeforeunload = function(event) {
                 
                  //***************** remove an item from shopping cart  *******************//
                 removeCartItem();
-                            
-
-        
             }
         });
         
@@ -513,10 +510,38 @@ window.onbeforeunload = function(event) {
         }
         
         // clear shopping cart
-        $("#emptycart").click(function(){
+        $("#emptycart").click(function() {
             emptyShoppingCart();
         });
         
+        
+    // get the buy link for the selected product
+       function getPaylink(name, size) {
+           fetch('../assets/js/items.js')
+            .then((response) => response.json())
+           .then(function(items) {
+                items.products.forEach(function(item, index) {
+                   if (item.name == name && item.size == size) {
+                       localStorage.currentID = "";
+                       localStorage.currentItemSize = "";
+                       window.location.href = item.payLink
+//                       return item.payLink;
+                   }
+               }) 
+           })
+       }
+        
+        $(".buyButton").click(function() {
+             if (!localStorage.getItem("currentItemSize")) {
+                alert("Please select a size...");
+            } else {
+               var name = localStorage.currentID;
+               var size = localStorage.currentItemSize;
+                
+                getPaylink(name, size);
+                }
+        })
+//       getPaylink("celebrateBH", "SM", "white");
        
         
     })()
