@@ -18,7 +18,7 @@ window.onunload = function(){};
 //        window.history.pushState('', null, document.referrer);
 //        $(window).on('popstate', function() {
 //            alert('Back button was pressed.');
-//            document.location.href = '#';
+//            document.referrer ? window.location = document.referrer : history.back();
 //            });
 //        }
 //    });
@@ -543,6 +543,7 @@ window.onbeforeunload = function(event) {
                    if (item.name == name && item.size == size) {
                        localStorage.currentID = "";
                        localStorage.currentItemSize = "";
+                       location.reload(true);
                        window.location.href = item.payLink
 //                       return item.payLink;
                    }
