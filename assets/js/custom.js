@@ -10,7 +10,6 @@ window.onunload = function(){};
     window.onunload = function(){};
     
     if(performance.navigation.type == 2){
-        alert("reloading");
        location.reload(true);
     }
     
