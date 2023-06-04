@@ -1,7 +1,7 @@
 //fetch('../assets/js/items.js')
 //.then((response) => response.json())
 //.then((item) => alert(item.products[0].title));
-
+window.onunload = function(){};
 (function ($) {
     window.onload = function() {
         console.log("Loaded logged");
