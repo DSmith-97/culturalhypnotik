@@ -10,7 +10,11 @@ window.onunload = function(){};
     window.onunload = function(){};
     
     if(performance.navigation.type == 2){
-       location.reload(true);
+//       location.reload(true);
+    }
+    
+    if (document.referrer.indexOf("stripe.com") > -1) {
+      location.reload(true);
     }
     
 //   $(function() {
