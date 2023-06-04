@@ -544,11 +544,7 @@ window.onbeforeunload = function(event) {
                        localStorage.currentID = "";
                        localStorage.currentItemSize = "";
                        
-//                       window.open(item.payLink,'','toolbar=no');
-//                       window.open(item.payLink, "_blank", "noopener noreferrer")
-                       
-                       var windowRef = window.open();
-                       windowRef.location = item.payLink;
+                     window.location.href = item.payLink;
                        
                        setTimeout(function() {
                            location.reload(true);
@@ -574,10 +570,52 @@ window.onbeforeunload = function(event) {
 //       getPaylink("celebrateBH", "SM", "white");
         
        
-        $(".logo").click(function() {
-            console.log(logo);
-            showDialog("https://buy.stripe.com/28o03P0czc895by8x9");
-        });
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;                                                        
+var yDown = null;
+
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}                                                     
+                                                                         
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+};                                                
+                                                                         
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+                                                                         
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            alert("swiped right");
+            /* right swipe */ 
+        } else {
+            /* left swipe */
+        }                       
+    } else {
+        if ( yDiff > 0 ) {
+            /* down swipe */ 
+        } else { 
+            /* up swipe */
+        }                                                                 
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
        
         
     })()
