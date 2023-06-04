@@ -544,11 +544,12 @@ window.onbeforeunload = function(event) {
                        localStorage.currentID = "";
                        localStorage.currentItemSize = "";
                        
-                       window.open(item.payLink,'','toolbar=no');
+//                       window.open(item.payLink,'','toolbar=no');
+                       window.open(item.payLink, "_blank", "noopener noreferrer")
                        
                        setTimeout(function() {
                            location.reload(true);
-                       }, 1000);
+                       }, 3000);
                        
 //                       return item.payLink;
                    }
@@ -569,8 +570,10 @@ window.onbeforeunload = function(event) {
         })
 //       getPaylink("celebrateBH", "SM", "white");
         
-        $(window).on('popstate', function(event) {
-         alert("pop");
+       
+        $(".logo").click(function() {
+            console.log(logo);
+            showDialog("https://buy.stripe.com/28o03P0czc895by8x9");
         });
        
         
