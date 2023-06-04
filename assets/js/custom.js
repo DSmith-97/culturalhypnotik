@@ -545,7 +545,10 @@ window.onbeforeunload = function(event) {
                        localStorage.currentItemSize = "";
                        
 //                       window.open(item.payLink,'','toolbar=no');
-                       window.open(item.payLink, "_blank", "noopener noreferrer")
+//                       window.open(item.payLink, "_blank", "noopener noreferrer")
+                       
+                       var windowRef = window.open();
+                       windowRef.location = item.payLink;
                        
                        setTimeout(function() {
                            location.reload(true);
