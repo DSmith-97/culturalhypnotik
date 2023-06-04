@@ -537,6 +537,7 @@ window.onbeforeunload = function(event) {
        }
         
         $(".buyButton").click(function() {
+            window.onunload = function(){};
              if (!localStorage.getItem("currentItemSize")) {
                 alert("Please select a size...");
             } else {
