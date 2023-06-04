@@ -6,6 +6,8 @@
     window.onload = function() {
         console.log("Loaded logged");
     }
+    
+    window.onunload = function(){};
 
 window.onbeforeunload = function(event) {
     event = event || window.event;
@@ -354,18 +356,21 @@ window.onbeforeunload = function(event) {
          // Highight Size Selections
         var currentItemSize = '';
         $("[name='itemSize']").click(function() {
+            $("button[name='itemSize']").css("border", "1px solid blue");
             
             //set local storage for size
             currentItemSize = $(this)[0].innerText;
             localStorage.setItem("currentItemSize", currentItemSize);
-            
-            setTimeout(function(){
-                $("[name='itemSize']").css("background-color" , "#007bff");
-                console.log($(this)[0].innerText + " clicked");
-                $(this).css("background-color", "red");
-                
-            }, 500);
-             $(this).css("background-color", "red");
+            $(this).css("border", "3px solid red");
+            console.log($(this)[0].innerText + " clicked");
+//            
+//            setTimeout(function(){
+//                $("[name='itemSize']").css("background-color" , "#007bff");
+//                console.log($(this)[0].innerText + " clicked");
+//                $(this).css("background-color", "red");
+//                
+//            }, 500);
+//             $(this).css("background-color", "red");
         })
         
         localStorage.getItem("itemslistcontent") ? localStorage.getItem("itemslistcontent") : localStorage.setItem("itemslistcontent", '');
