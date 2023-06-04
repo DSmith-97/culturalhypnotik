@@ -543,8 +543,13 @@ window.onbeforeunload = function(event) {
                    if (item.name == name && item.size == size) {
                        localStorage.currentID = "";
                        localStorage.currentItemSize = "";
-                       location.reload(true);
-                       window.location.href = item.payLink
+                       
+                       window.open(item.payLink,'','toolbar=no');
+                       
+                       setTimeout(function() {
+                           location.reload(true);
+                       }, 1000);
+                       
 //                       return item.payLink;
                    }
                }) 
