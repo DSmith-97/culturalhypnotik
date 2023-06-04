@@ -8,6 +8,21 @@ window.onunload = function(){};
     }
     
     window.onunload = function(){};
+    
+    if(performance.navigation.type == 2){
+        alert("reloading");
+       location.reload(true);
+    }
+    
+//   $(function() {
+//    if (window.history && window.history.pushState) {
+//        window.history.pushState('', null, document.referrer);
+//        $(window).on('popstate', function() {
+//            alert('Back button was pressed.');
+//            document.location.href = '#';
+//            });
+//        }
+//    });
 
 window.onbeforeunload = function(event) {
     event = event || window.event;
@@ -548,6 +563,10 @@ window.onbeforeunload = function(event) {
                 }
         })
 //       getPaylink("celebrateBH", "SM", "white");
+        
+        $(window).on('popstate', function(event) {
+         alert("pop");
+        });
        
         
     })()
