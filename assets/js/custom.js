@@ -327,7 +327,7 @@ window.onbeforeunload = function(event) {
                '</div>'+
           '</div>")';
                 
-        $("body").append(aModal);
+//        $("body").append(aModal);
         
         $("#success-alert").hide();
         
