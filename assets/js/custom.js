@@ -357,18 +357,18 @@ window.onbeforeunload = function(event) {
                 }
             ];
         
-        var cartContents = $("#itemslist")[0].innerHTML;
-        
-         // Highight Size Selections
-        var currentItemSize = '';
-        $("[name='itemSize']").click(function() {
-            $("button[name='itemSize']").css("border", "1px solid blue");
-            
-            //set local storage for size
-            currentItemSize = $(this)[0].innerText;
-            localStorage.setItem("currentItemSize", currentItemSize);
-            $(this).css("border", "3px solid red");
-            console.log($(this)[0].innerText + " clicked");
+//        var cartContents = $("#itemslist")[0].innerHTML;
+//        
+//         // Highight Size Selections
+//        var currentItemSize = '';
+//        $("[name='itemSize']").click(function() {
+//            $("button[name='itemSize']").css("border", "1px solid blue");
+//            
+//            //set local storage for size
+//            currentItemSize = $(this)[0].innerText;
+//            localStorage.setItem("currentItemSize", currentItemSize);
+//            $(this).css("border", "3px solid red");
+//            console.log($(this)[0].innerText + " clicked");
 //            
 //            setTimeout(function(){
 //                $("[name='itemSize']").css("background-color" , "#007bff");
@@ -377,7 +377,7 @@ window.onbeforeunload = function(event) {
 //                
 //            }, 500);
 //             $(this).css("background-color", "red");
-        })
+//        })
         
         localStorage.getItem("itemslistcontent") ? localStorage.getItem("itemslistcontent") : localStorage.setItem("itemslistcontent", '');
         var itemsliststore = localStorage.getItem("itemslistcontent");
@@ -462,7 +462,7 @@ window.onbeforeunload = function(event) {
             }
         });
         
-        $("#cartsubtotal")[0].innerHTML = parseInt(localStorage.subtotal);
+//        $("#cartsubtotal")[0].innerHTML = parseInt(localStorage.subtotal);
         
         $('#cartModal').on('shown.bs.modal', function() {
              $(".plus").unbind().click(function() {
