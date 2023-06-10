@@ -358,26 +358,26 @@ window.onbeforeunload = function(event) {
             ];
         
 //        var cartContents = $("#itemslist")[0].innerHTML;
-//        
-//         // Highight Size Selections
-//        var currentItemSize = '';
-//        $("[name='itemSize']").click(function() {
-//            $("button[name='itemSize']").css("border", "1px solid blue");
-//            
-//            //set local storage for size
-//            currentItemSize = $(this)[0].innerText;
-//            localStorage.setItem("currentItemSize", currentItemSize);
-//            $(this).css("border", "3px solid red");
-//            console.log($(this)[0].innerText + " clicked");
-//            
-//            setTimeout(function(){
-//                $("[name='itemSize']").css("background-color" , "#007bff");
-//                console.log($(this)[0].innerText + " clicked");
-//                $(this).css("background-color", "red");
-//                
-//            }, 500);
-//             $(this).css("background-color", "red");
-//        })
+        
+         // Highight Size Selections
+        var currentItemSize = '';
+        $("[name='itemSize']").click(function() {
+            $("button[name='itemSize']").css("border", "1px solid blue");
+            
+            //set local storage for size
+            currentItemSize = $(this)[0].innerText;
+            localStorage.setItem("currentItemSize", currentItemSize);
+            $(this).css("border", "3px solid red");
+            console.log($(this)[0].innerText + " clicked");
+            
+            setTimeout(function(){
+                $("[name='itemSize']").css("background-color" , "#007bff");
+                console.log($(this)[0].innerText + " clicked");
+                $(this).css("background-color", "red");
+                
+            }, 500);
+             $(this).css("background-color", "red");
+        })
         
         localStorage.getItem("itemslistcontent") ? localStorage.getItem("itemslistcontent") : localStorage.setItem("itemslistcontent", '');
         var itemsliststore = localStorage.getItem("itemslistcontent");
